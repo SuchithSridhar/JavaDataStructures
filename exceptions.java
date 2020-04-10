@@ -29,3 +29,11 @@ class FullQueueException extends RuntimeException {
         super(err);
     }
 }
+
+class EmptyDequeException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
+
+    public EmptyDequeException(String err) {
+        super(err);
+    }
+}

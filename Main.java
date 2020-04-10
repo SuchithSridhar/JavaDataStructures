@@ -10,7 +10,7 @@ public class Main {
         string = ("\n\n --- Main Program - Implement DataStructures ---");
         System.out.println(string);
         string = ("\n-- MENU --\n" + "0. Exit\n" + "1. Array Stacks\n" + "2. Array Queue\n" + "3. Node Stacks\n"
-                + "4. Node Queue\n");
+                + "4. Node Queue\n" + "5. Node Deque\n");
 
         while (true) {
             System.out.println(string);
@@ -34,6 +34,9 @@ public class Main {
                     break;
                 case 4:
                     nodeQueueDemo();
+                    break;
+                case 5:
+                    nodeDequeDemo();
                     break;
 
                 default:
@@ -122,5 +125,33 @@ public class Main {
             System.out.println("Removed element: " + element);
         }
         System.out.println("--- Demo Completed ---");
+    }
+
+    protected static void nodeDequeDemo() {
+        System.out.println("- Inserting elements into deque");
+
+        Integer[] array = { 1, 2, 45, 67, 89 };
+        NodeDeque deque = new NodeDeque();
+
+        System.out.println(Arrays.toString(array) + " - Inserting elements in this order from the front");
+        for (Integer ele : array) {
+            deque.insertFirst(ele);
+        }
+        System.out.println("Insertion from front completed");
+        System.out.println("Begining insertion from end of same elements");
+        for (Integer ele : array) {
+            deque.insertLast(ele);
+        }
+        System.out.println("Inserted all the elements in the last too");
+        System.out.println("removed First element: " + (Integer) deque.removeFirst());
+        System.out.println("removed Last element: " + (Integer) deque.removeLast());
+        System.out.println("New first element: " + (Integer) deque.first());
+        System.out.println("New last element: " + (Integer) deque.last());
+        System.out.println();
+        System.out.println("Removing all elements from the front.");
+        while (!deque.isEmpty()) {
+            System.out.println("Element: " + (Integer) deque.removeFirst());
+        }
+        System.out.println("Completed.");
     }
 }

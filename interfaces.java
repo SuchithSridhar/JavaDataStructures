@@ -23,3 +23,21 @@ interface Queue {
     public void enqueue(Object obj) throws EmptyQueueException;
 
 }
+
+interface Deque {
+    public int size();
+
+    public boolean isEmpty();
+
+    public void insertFirst(Object element);
+
+    public void insertLast(Object element);
+
+    public Object removeFirst() throws EmptyDequeException;
+
+    public Object removeLast() throws EmptyDequeException;
+
+    public Object first() throws EmptyDequeException;
+
+    public Object last() throws EmptyDequeException;
+}
